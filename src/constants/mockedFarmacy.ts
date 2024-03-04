@@ -1,0 +1,1 @@
+export const farmacyArray = ['anc24', 'apteka24', 'apteka-online']
