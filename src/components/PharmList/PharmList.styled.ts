@@ -12,18 +12,18 @@ align-items: center;
 export const buttonStyles = {
     width: "210px",
     marginLeft: "8px",
-    backgroundColor: "red",
+    backgroundColor: "#007eff",
     height: "55px",
     lineHeight: "40px",
     fontWeight: "600",
-    fontSize: "18px",
+    fontSize: "14px",
     whiteSpace: "nowrap",
     overflow: "hidden",
     textOverflow: "ellipsis",
     borderRadius: "12px",
     "&:hover": {
         backgroundColor: "#ffffff",
-        color: "red",
+        color: "#007eff",
     },
 };
 

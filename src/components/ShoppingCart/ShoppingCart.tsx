@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Button, TextField } from "@mui/material";
 import {
   ButtonBox,
@@ -11,18 +11,43 @@ import { Medicine } from "../PharmList/PharmList";
 import { ShoppingCartItem } from "../ShoppingCartItem/ShoppingCartItem";
 import { CartLiPriceText } from "../ShoppingCartItem/ShoppingCartItem.styled";
 import { buttonStyles } from "../PharmList/PharmList.styled";
+import CustomModal from "../Modal";
 
 export const ShoppingCart = () => {
-  const cartOrders: Medicine[] = JSON.parse(
+  const [total, setTotal] = useState<number>(0);
+  const [cartOrders, setCartOrders] = useState<Medicine[]>([]);
+  const [modal, setModal] = useState(false);
+  const cartOrdersStored: Medicine[] = JSON.parse(
     localStorage.getItem("CartOrder") || "[]"
   );
 
-  const total = cartOrders?.reduce((acc, item) => acc + item.price, 0);
-  const roundedTotal = parseFloat(total.toFixed(1));
+  useEffect(() => {
+    if (cartOrdersStored) {
+      setCartOrders(cartOrdersStored);
+    }
+  }, []);
+
+  useEffect(() => {
+    const total = cartOrders?.reduce((acc, item) => acc + item.price, 0);
+    setTotal(total);
+  }, [cartOrders]);
+
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const form = e.currentTarget as HTMLFormElement;
   };
+
+  const updateTotalPrice = (price: number) => {
+    setTotal(price);
+  };
+
+  const deleteMedicine = (id: any) => {
+    const updatedCartOrders = cartOrders.filter((item) => item._id !== id);
+    setCartOrders(updatedCartOrders);
+    localStorage.setItem("CartOrder", JSON.stringify(updatedCartOrders || []));
+    localStorage.removeItem(`quantity_${id}`);
+  };
+
   return (
     <ShoppingCartContainer>
       <CredentialsCartContainer onSubmit={handleSubmit} autoComplete="off">
@@ -62,15 +87,26 @@ export const ShoppingCart = () => {
       <OrderCartContainer>
         <ul>
           {cartOrders?.map((item) => (
-            <ShoppingCartItem key={item._id} medicine={item} />
+            <ShoppingCartItem
+              key={item._id}
+              updateTotalPrice={updateTotalPrice}
+              medicine={item}
+              deleteMedicine={deleteMedicine}
+            />
           ))}
         </ul>
       </OrderCartContainer>
       <ButtonBox>
-        <CartLiPriceText>Разом: {roundedTotal}грн</CartLiPriceText>
-        <Button type="submit" variant="contained" sx={buttonStyles}>
-          Submit
+        <CartLiPriceText>Разом: {total.toFixed(1)}грн</CartLiPriceText>
+        <Button
+          onClick={() => setModal(true)}
+          type="submit"
+          variant="contained"
+          sx={buttonStyles}
+        >
+          Оформити замовлення
         </Button>
+        {modal && <CustomModal open={modal} onClose={() => setModal(false)} />}
       </ButtonBox>
     </ShoppingCartContainer>
   );

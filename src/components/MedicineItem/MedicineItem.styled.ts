@@ -16,7 +16,7 @@ border-radius: 8px;
 `;
 
 export const buttonStyles = {
-  backgroundColor: "red",
+  backgroundColor: "#007eff",
   height: "30px",
   lineHeight: "40px",
   fontWeight: "600",
@@ -29,7 +29,7 @@ export const buttonStyles = {
   marginBottom: "10px",
   "&:hover": {
     backgroundColor: "#ffffff",
-    color: "red",
+    color: "#007eff",
   },
 };
 

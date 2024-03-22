@@ -2,6 +2,7 @@ import { FC } from "react";
 import { MedicineLi, PriceText, buttonStyles } from "./MedicineItem.styled";
 import { Medicine } from "../PharmList/PharmList";
 import { Button } from "@mui/material";
+
 type MedicineItemItemProp = {
   medicine: Medicine;
 };
@@ -16,7 +17,6 @@ export const MedicineItem: FC<MedicineItemItemProp> = ({ medicine }) => {
     if (!isAlreadyInCart) {
       let updateMedicine = { ...medicine, quantity: 1 };
       const updatedItems = [...existingItems, updateMedicine];
-      console.log("updatedItems", updatedItems);
       localStorage.setItem("CartOrder", JSON.stringify(updatedItems));
       alert(`${medicine.name} додано в кошик!`);
     } else {
