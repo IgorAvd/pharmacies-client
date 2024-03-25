@@ -6,11 +6,12 @@ import {
   InputStyle,
   OrderCartContainer,
   ShoppingCartContainer,
+  buttonStyles,
 } from "./ShoppingCart.styled";
 import { Medicine } from "../PharmList/PharmList";
 import { ShoppingCartItem } from "../ShoppingCartItem/ShoppingCartItem";
 import { CartLiPriceText } from "../ShoppingCartItem/ShoppingCartItem.styled";
-import { buttonStyles } from "../PharmList/PharmList.styled";
+
 import CustomModal from "../Modal";
 
 export const ShoppingCart = () => {
@@ -49,65 +50,70 @@ export const ShoppingCart = () => {
   };
 
   return (
-    <ShoppingCartContainer>
-      <CredentialsCartContainer onSubmit={handleSubmit} autoComplete="off">
-        <TextField
-          label="Name"
-          type="text"
-          name="name"
-          variant="outlined"
-          required
-          sx={InputStyle}
-        />
-        <TextField
-          label="Email"
-          type="email"
-          name="email"
-          variant="outlined"
-          required
-          sx={InputStyle}
-        />
-        <TextField
-          label="Phone"
-          type="tel"
-          name="phone"
-          variant="outlined"
-          required
-          sx={InputStyle}
-        />
-        <TextField
-          label="Address"
-          type="text"
-          name="address"
-          variant="outlined"
-          required
-          sx={InputStyle}
-        />
-      </CredentialsCartContainer>
-      <OrderCartContainer>
-        <ul>
-          {cartOrders?.map((item) => (
-            <ShoppingCartItem
-              key={item._id}
-              updateTotalPrice={updateTotalPrice}
-              medicine={item}
-              deleteMedicine={deleteMedicine}
-            />
-          ))}
-        </ul>
-      </OrderCartContainer>
-      <ButtonBox>
-        <CartLiPriceText>Разом: {total.toFixed(1)}грн</CartLiPriceText>
-        <Button
-          onClick={() => setModal(true)}
-          type="submit"
-          variant="contained"
-          sx={buttonStyles}
-        >
-          Оформити замовлення
-        </Button>
-        {modal && <CustomModal open={modal} onClose={() => setModal(false)} />}
-      </ButtonBox>
-    </ShoppingCartContainer>
+    <div style={{ display: "flex", margin: " 0 auto", padding: "0 25px" }}>
+      <ShoppingCartContainer>
+        <CredentialsCartContainer onSubmit={handleSubmit} autoComplete="off">
+          <TextField
+            label="Name"
+            type="text"
+            name="name"
+            variant="outlined"
+            required
+            sx={InputStyle}
+          />
+          <TextField
+            label="Email"
+            type="email"
+            name="email"
+            variant="outlined"
+            required
+            sx={InputStyle}
+          />
+          <TextField
+            label="Phone"
+            type="tel"
+            name="phone"
+            variant="outlined"
+            required
+            sx={InputStyle}
+          />
+          <TextField
+            label="Address"
+            type="text"
+            name="address"
+            variant="outlined"
+            required
+            sx={InputStyle}
+          />
+        </CredentialsCartContainer>
+        <OrderCartContainer>
+          <ul>
+            {cartOrders?.map((item) => (
+              <ShoppingCartItem
+                key={item._id}
+                updateTotalPrice={updateTotalPrice}
+                medicine={item}
+                deleteMedicine={deleteMedicine}
+              />
+            ))}
+          </ul>
+        </OrderCartContainer>
+        <ButtonBox>
+          <CartLiPriceText>Разом: {total.toFixed(1)}грн</CartLiPriceText>
+          <Button
+            onClick={() => setModal(true)}
+            type="submit"
+            variant="contained"
+            sx={buttonStyles}
+          >
+            Оформити замовлення
+          </Button>
+
+          {modal && (
+            <CustomModal open={modal} onClose={() => setModal(false)} />
+          )}
+        </ButtonBox>
+      </ShoppingCartContainer>
+    </div>
   );
 };

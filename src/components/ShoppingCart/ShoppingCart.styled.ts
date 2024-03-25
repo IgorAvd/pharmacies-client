@@ -35,9 +35,9 @@ border-radius: 8px;
 `;
 
 export const InputStyle = {
-    width: "530px",
-    display: "flex",
-    margin: "25px auto",
+  width: "530px",
+  display: "flex",
+  margin: "25px auto",
 }
 
 export const ButtonBox = styled.div`
@@ -46,3 +46,22 @@ align-items: center;
 justify-content: space-around;
 grid-column: 2;
 `;
+
+export const buttonStyles = {
+  display: "block",
+  width: "270px",
+  marginLeft: "8px",
+  backgroundColor: "#007eff",
+  height: "55px",
+  lineHeight: "40px",
+  fontWeight: "600",
+  fontSize: "14px",
+  whiteSpace: "nowrap",
+  overflow: "hidden",
+  textOverflow: "ellipsis",
+  borderRadius: "12px",
+  "&:hover": {
+    backgroundColor: "#ffffff",
+    color: "#007eff",
+  },
+};

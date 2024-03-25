@@ -9,5 +9,9 @@ gap: 35px;
 img {  
   border-radius:10px;   
   width: 250px;
-  }    
+  }   
+   @media (max-width: 480px) {
+    grid-template-columns: repeat(2, 1fr);
+  } 
 `;
+

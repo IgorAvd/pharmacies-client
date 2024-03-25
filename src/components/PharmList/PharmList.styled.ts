@@ -10,6 +10,7 @@ align-items: center;
 `;
 
 export const buttonStyles = {
+    display: "block",
     width: "210px",
     marginLeft: "8px",
     backgroundColor: "#007eff",
