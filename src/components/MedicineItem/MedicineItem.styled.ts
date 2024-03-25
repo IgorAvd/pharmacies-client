@@ -4,7 +4,7 @@ import styled from '@emotion/styled';
 export const MedicineLi = styled.li`
 display: block;
 text-align: center;
-width: 350px;
+width: 330px;
 margin: 0 auto;
 border: 3px solid #eeeeee;
 border-radius: 8px;
