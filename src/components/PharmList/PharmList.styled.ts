@@ -6,7 +6,7 @@ gap: 15px;
 display: flex;
 flex-direction: column;
 //  margin-right: 90px;
- margin-right: 10px;
+ margin-bottom: 20px;
 align-items: center;
 `;
 
@@ -32,6 +32,6 @@ export const buttonStyles = {
 
 export const PharmListTitle = styled.p`
 font-size: 33px;
-margin-bottom: 40px;
+margin-bottom: 20px;
 text-align: center;
 `;

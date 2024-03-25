@@ -2,6 +2,7 @@ import styled from '@emotion/styled';
 
 export const HomePageContainer = styled.div`
 display: flex;
+flex-direction: column;
 
     padding: 0 6px;
 // padding: 40px 140px;

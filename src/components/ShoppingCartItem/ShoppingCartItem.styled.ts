@@ -3,6 +3,7 @@ import styled from '@emotion/styled';
 export const ShoppingCartLi = styled.li`
 display: flex;
 flex-direction: column;
+
 text-align: center;
 // margin: 15px auto;
 margin-bottom: 15px;
