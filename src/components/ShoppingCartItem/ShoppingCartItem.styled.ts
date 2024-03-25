@@ -5,7 +5,6 @@ display: flex;
 flex-direction: column;
 text-align: center;
 margin: 15px auto;
-// width: 575px;
 border: 3px solid #eeeeee;
 border-radius: 8px;
  cursor: pointer;
