@@ -44,6 +44,7 @@ const Ticker: FC<ITickerProps> = ({ content }) => {
         whiteSpace: "nowrap",
         overflow: "hidden",
         marginTop: "105px",
+        marginBottom: "20px",
       }}
     >
       {Array.from({ length: repeatCount }).map((_, index) => (

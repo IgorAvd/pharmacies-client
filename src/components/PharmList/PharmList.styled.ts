@@ -1,18 +1,20 @@
 import styled from '@emotion/styled';
 
 export const PharmListContainer = styled.div`
-width: 300px;
+// width: 300px;
 gap: 15px;
 display: flex;
 flex-direction: column;
-margin-right: 90px;
+//  margin-right: 90px;
+ margin-right: 10px;
 align-items: center;
 `;
 
 export const buttonStyles = {
     display: "block",
-    width: "210px",
-    marginLeft: "8px",
+    // width: "210px",
+    width: "160px",
+    // marginLeft: "8px",
     backgroundColor: "#007eff",
     height: "55px",
     lineHeight: "40px",
