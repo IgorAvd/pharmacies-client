@@ -22,7 +22,7 @@ img {
     grid-template-columns: repeat(1, 1fr);
     img {  
   border-radius:10px;   
-  width: 450px;
+  width: 350px;
   }
   } 
 `;

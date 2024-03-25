@@ -2,7 +2,9 @@ import styled from '@emotion/styled';
 
 export const HomePageContainer = styled.div`
 display: flex;
-padding: 40px 140px;
+
+    padding: 0 10px;
+// padding: 40px 140px;
   }
 `;
 
