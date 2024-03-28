@@ -1,29 +1,33 @@
 import styled from '@emotion/styled';
 
 export const ShoppingCartContainer = styled.div`
-
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 8px;
-     width: 330px;
-    // gap: 35px;
+// width: 300px;
+    // display: grid;
+    // grid-template-columns: repeat(2, 1fr);
+    gap: 50px;     
+    //  padding-bottom: 25px;
     margin: 175px auto 0;
-    padding: 0 10px;
-    // padding : 0 50px;
+    padding: 0 10px 25px;  
+     align-items: center; 
+    justify-items: center; 
+
     @media (max-width: 393px) {
    display: flex;
    flex-direction:column;
    margin-top: 140px;
+  //  width: 330px; 
+   gap: 8px;  
   }
-  }
+    @media (min-width: 394px) {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;     
+ }
 `;
 
-export const CredentialsCartContainer = styled.form`
-  
-  
-    // height: 370px;
-    height: 460px;
-    // width: 250px;
+export const CredentialsCartContainer = styled.form` 
+    // width: 300px;
+    height: 460px;   
     border: 3px solid #eeeeee;
     border-radius: 8px;
     padding:0 25px;
@@ -35,11 +39,14 @@ export const CredentialsCartContainer = styled.form`
   }
   @media (max-width: 393px) {
   height: 360px;
+      width: 330px;
   }
+   @media (min-width: 394px) {
+  width: 340px;
+ }
 `;
 
 export const OrderCartContainer = styled.div`
-// height: 420px;
 height: 460px;
 overflow: auto;
 border: 3px solid #eeeeee;
@@ -50,10 +57,16 @@ border-radius: 8px;
     box-shadow: 1px 4px 6px 0px rgba(0, 0, 0, 0.25);
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.122);
   }
+   @media (max-width: 393px) {
+  
+      width: 330px;
+  }
+   @media (min-width: 394px) {
+  width: 340px;
+ }
 `;
 
 export const InputStyle = {
-  // width: "530px",
   display: "flex",
   margin: "25px auto",
 }
