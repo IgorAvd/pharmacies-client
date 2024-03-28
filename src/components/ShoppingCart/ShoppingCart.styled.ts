@@ -5,6 +5,7 @@ export const ShoppingCartContainer = styled.div`
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 8px;
+     width: 330px;
     // gap: 35px;
     margin: 175px auto 0;
     padding: 0 10px;
@@ -72,7 +73,7 @@ export const buttonStyles = {
   height: "55px",
   lineHeight: "40px",
   fontWeight: "600",
-  fontSize: "14px",
+  fontSize: "12px",
   whiteSpace: "nowrap",
   overflow: "hidden",
   textOverflow: "ellipsis",

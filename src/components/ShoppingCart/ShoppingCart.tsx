@@ -50,8 +50,13 @@ export const ShoppingCart = () => {
   };
 
   return (
-    // <div style={{ display: "flex", margin: " 0 auto", padding: "0 25px" }}>
-    <div style={{ display: "flex", margin: " 0 auto", paddingBottom: "25px" }}>
+    <div
+      style={{
+        display: "flex",
+        margin: " 0 auto",
+        paddingBottom: "25px",
+      }}
+    >
       <ShoppingCartContainer>
         <CredentialsCartContainer onSubmit={handleSubmit} autoComplete="off">
           <TextField
