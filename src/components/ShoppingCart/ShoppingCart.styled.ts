@@ -9,7 +9,7 @@ export const ShoppingCartContainer = styled.div`
     margin: 175px auto 0;
     padding: 0 10px;
     // padding : 0 50px;
-    @media (max-width: 480px) {
+    @media (max-width: 393px) {
    display: flex;
    flex-direction:column;
    margin-top: 140px;
@@ -32,7 +32,7 @@ export const CredentialsCartContainer = styled.form`
     box-shadow: 1px 4px 6px 0px rgba(0, 0, 0, 0.25);
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.122);
   }
-  @media (max-width: 480px) {
+  @media (max-width: 393px) {
   height: 360px;
   }
 `;
