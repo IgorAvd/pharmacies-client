@@ -42,7 +42,7 @@ export const CredentialsCartContainer = styled.form`
       width: 330px;
   }
    @media (min-width: 394px) {
-  width: 340px;
+  width: 360px;
  }
 `;
 
@@ -62,7 +62,7 @@ border-radius: 8px;
       width: 330px;
   }
    @media (min-width: 394px) {
-  width: 340px;
+  width: 360px;
  }
 `;
 

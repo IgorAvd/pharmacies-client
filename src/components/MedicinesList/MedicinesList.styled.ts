@@ -15,7 +15,7 @@ img {
     grid-template-columns: repeat(2, 1fr);
     img {  
   border-radius:10px;   
-  width: 330px;
+  width: 310px;
   }
   } 
    @media (max-width: 393px) {
