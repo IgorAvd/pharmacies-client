@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Button, TextField } from "@mui/material";
 import {
   ButtonBox,
@@ -33,11 +33,6 @@ export const ShoppingCart = () => {
     setTotal(total);
   }, [cartOrders]);
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    const form = e.currentTarget as HTMLFormElement;
-  };
-
   const updateTotalPrice = (price: number) => {
     setTotal(price);
   };
@@ -50,76 +45,66 @@ export const ShoppingCart = () => {
   };
 
   return (
-    <div
-    // style={{
-    //   display: "flex",
-    //   margin: " 0 auto",
-    //   // paddingBottom: "25px",
-    // }}
-    >
-      <ShoppingCartContainer>
-        <CredentialsCartContainer onSubmit={handleSubmit} autoComplete="off">
-          <TextField
-            label="Name"
-            type="text"
-            name="name"
-            variant="outlined"
-            required
-            sx={InputStyle}
-          />
-          <TextField
-            label="Email"
-            type="email"
-            name="email"
-            variant="outlined"
-            required
-            sx={InputStyle}
-          />
-          <TextField
-            label="Phone"
-            type="tel"
-            name="phone"
-            variant="outlined"
-            required
-            sx={InputStyle}
-          />
-          <TextField
-            label="Address"
-            type="text"
-            name="address"
-            variant="outlined"
-            required
-            sx={InputStyle}
-          />
-        </CredentialsCartContainer>
-        <OrderCartContainer>
-          <ul>
-            {cartOrders?.map((item) => (
-              <ShoppingCartItem
-                key={item._id}
-                updateTotalPrice={updateTotalPrice}
-                medicine={item}
-                deleteMedicine={deleteMedicine}
-              />
-            ))}
-          </ul>
-        </OrderCartContainer>
-        <ButtonBox>
-          <CartLiPriceText>Разом: {total.toFixed(1)}грн</CartLiPriceText>
-          <Button
-            onClick={() => setModal(true)}
-            type="submit"
-            variant="contained"
-            sx={buttonStyles}
-          >
-            Оформити замовлення
-          </Button>
+    <ShoppingCartContainer>
+      <CredentialsCartContainer autoComplete="off">
+        <TextField
+          label="Name"
+          type="text"
+          name="name"
+          variant="outlined"
+          required
+          sx={InputStyle}
+        />
+        <TextField
+          label="Email"
+          type="email"
+          name="email"
+          variant="outlined"
+          required
+          sx={InputStyle}
+        />
+        <TextField
+          label="Phone"
+          type="tel"
+          name="phone"
+          variant="outlined"
+          required
+          sx={InputStyle}
+        />
+        <TextField
+          label="Address"
+          type="text"
+          name="address"
+          variant="outlined"
+          required
+          sx={InputStyle}
+        />
+      </CredentialsCartContainer>
+      <OrderCartContainer>
+        <ul>
+          {cartOrders?.map((item) => (
+            <ShoppingCartItem
+              key={item._id}
+              updateTotalPrice={updateTotalPrice}
+              medicine={item}
+              deleteMedicine={deleteMedicine}
+            />
+          ))}
+        </ul>
+      </OrderCartContainer>
+      <ButtonBox>
+        <CartLiPriceText>Разом: {total.toFixed(1)}грн</CartLiPriceText>
+        <Button
+          onClick={() => setModal(true)}
+          type="submit"
+          variant="contained"
+          sx={buttonStyles}
+        >
+          Оформити замовлення
+        </Button>
 
-          {modal && (
-            <CustomModal open={modal} onClose={() => setModal(false)} />
-          )}
-        </ButtonBox>
-      </ShoppingCartContainer>
-    </div>
+        {modal && <CustomModal open={modal} onClose={() => setModal(false)} />}
+      </ButtonBox>
+    </ShoppingCartContainer>
   );
 };

@@ -1,11 +1,7 @@
 import styled from '@emotion/styled';
 
 export const ShoppingCartContainer = styled.div`
-// width: 300px;
-    // display: grid;
-    // grid-template-columns: repeat(2, 1fr);
-    gap: 50px;     
-    //  padding-bottom: 25px;
+    gap: 50px;  
     margin: 175px auto 0;
     padding: 0 10px 25px;  
      align-items: center; 
@@ -15,7 +11,6 @@ export const ShoppingCartContainer = styled.div`
    display: flex;
    flex-direction:column;
    margin-top: 140px;
-  //  width: 330px; 
    gap: 8px;  
   }
     @media (min-width: 394px) {
@@ -25,24 +20,22 @@ export const ShoppingCartContainer = styled.div`
  }
 `;
 
-export const CredentialsCartContainer = styled.form` 
-    // width: 300px;
+export const CredentialsCartContainer = styled.form`     
     height: 460px;   
     border: 3px solid #eeeeee;
     border-radius: 8px;
     padding:0 25px;
      cursor: pointer;
      &:hover,
-  &:focus {
-    box-shadow: 1px 4px 6px 0px rgba(0, 0, 0, 0.25);
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.122);
+  &:focus {    
+     box-shadow: 0 1px 4px rgba(0,0,0,0.3), -23px 0 20px -23px rgba(0,0,0,0.8), 23px 0 20px -23px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.1) inset;   
   }
   @media (max-width: 393px) {
   height: 360px;
       width: 330px;
   }
    @media (min-width: 394px) {
-  width: 360px;
+  width: 560px;
  }
 `;
 
@@ -54,15 +47,14 @@ border-radius: 8px;
  cursor: pointer;
   &:hover,
   &:focus {
-    box-shadow: 1px 4px 6px 0px rgba(0, 0, 0, 0.25);
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.122);
+    box-shadow: 0 1px 4px rgba(0,0,0,0.3), -23px 0 20px -23px rgba(0,0,0,0.8), 23px 0 20px -23px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.1) inset;   
   }
    @media (max-width: 393px) {
   
       width: 330px;
   }
    @media (min-width: 394px) {
-  width: 360px;
+  width: 460px;
  }
 `;
 
@@ -95,4 +87,7 @@ export const buttonStyles = {
     backgroundColor: "#ffffff",
     color: "#007eff",
   },
+  "@media(max-width: 393px)": {
+    width: "250px",
+  }
 };

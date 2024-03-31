@@ -11,9 +11,10 @@ border-radius: 8px;
  cursor: pointer;
   &:hover,
   &:focus {
-    box-shadow: 1px 4px 6px 0px rgba(0, 0, 0, 0.25);
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.122);
+     box-shadow: 0 1px 4px rgba(0,0,0,0.3), -23px 0 20px -23px rgba(0,0,0,0.8), 23px 0 20px -23px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.1) inset;   
   }
+   @media (min-width: 394px) {
+  width: 400px;
 `;
 
 export const buttonStyles = {
